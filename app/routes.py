@@ -1,5 +1,6 @@
 from app import app
-from flask import render_template
+from flask import render_template, flash, redirect, url_for
+from app.forms import SendForm
 
 
 @app.route('/')
@@ -7,9 +8,12 @@ from flask import render_template
 def index():
     return render_template('index.html')
 
-@app.route('/contato')
+@app.route('/contato', methods=['GET', 'POST'])
 def contato():
-    return render_template('contato.html')
+    form = SendForm()
+    if form.validate_on_submit():
+        mensagem = flash('A mensagem foi enviada com sucesso')
+    return render_template('contato.html', form=form)
 
 @app.route('/blog')
 def blog():
