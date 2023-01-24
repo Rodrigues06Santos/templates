@@ -8,4 +8,4 @@ class SendForm(FlaskForm):
     email = EmailField('email', validators=[DataRequired()])
     mensagem = StringField('mensagem', validators=[DataRequired()])
     assunto = TextAreaField('assunto', validators=[DataRequired()])
-    submit = SubmitField('Enviar')
+    submit = SubmitField('enviar')

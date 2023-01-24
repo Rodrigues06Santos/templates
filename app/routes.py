@@ -1,5 +1,5 @@
 from app import app
-from flask import render_template, flash, redirect, url_for
+from flask import render_template, flash, redirect, request, url_for
 from app.forms import SendForm
 
 
@@ -8,7 +8,7 @@ from app.forms import SendForm
 def index():
     return render_template('index.html')
 
-@app.route('/contato', methods=['GET', 'POST'])
+@app.route('/contato', methods = ['POST', 'GET'])
 def contato():
     form = SendForm()
     if form.validate_on_submit():

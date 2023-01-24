@@ -5,8 +5,8 @@
 {% with menssages = get_flashed_messages() %}
     {% if messages %}
         {% for msg in messages %}
-             <div class="alert alert-sucess" role="alert">
-                    {{msg}}
+             <div class="alert alert-success" role="alert">
+                {{msg}}
             </div>
          {% endfor %}
     {% endif %}
@@ -22,18 +22,19 @@
             {{ form.csrf_token }}
             <div class="text-start form-group">
                 <label for="text">Nome completo</label>
-                {{ form.nome(class="form-control", placeholder="Digite aqui seu nome") }}
+                {{ form.nome(class="form-control", placeholder="Digite aqui seu nome")}}
                 <label for="email">E-mail</label>
-                {{ form.email(class="form-control", placeholder="Digite aqui seu email") }}
+                {{ form.email(class="form-control", placeholder="Digite aqui seu email")}}
                 <label for="text">Assunto</label>
-                {{ form.assunto(class="form-control", placeholder="Digite aqui o assunto") }}
-                <label for="text">Corpo do e-mail</e-mail></label>
-                {{ form.mensagem(class="form-control", rows"3", placeholder="Digite aqui a mensagem") }}
+                {{ form.assunto(class="form-control", placeholder="Digite aqui o assunto")}}
+                <label for="text">Corpo do e-mail</label>
+                {{ form.mensagem(class="form-control", rows="3", placeholder="Digite aqui a mensagem")}}
+                <div class="text-center mt-3">
                 {{ form.submit(class="btn btn-primary") }}
             </div>
         </form>
     </div>
-    
+</div>
     </div>
         </main>
 
